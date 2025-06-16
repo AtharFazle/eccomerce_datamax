@@ -1,0 +1,426 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Athar Mawla",
+      "email": "athar@example.com",
+      "password": "12345678",
+      "phone": "081259971975",
+      "balance": 150000
+    },
+    {
+      "id": "2",
+      "name": "Athar 2 Mawla",
+      "email": "atharfazle202@gmail.com",
+      "password": "12345678",
+      "phone": "081259971975",
+      "balance": 150000
+    },
+    {
+      "id": "user_1750078597758",
+      "name": "Driscoll Cohen",
+      "email": "lycaz@mailinator.com",
+      "phone": "+1 (509) 357-5419",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": "Pa$$w0rd!",
+      "balance": 0
+    },
+    {
+      "id": "user_1750090786944",
+      "name": "baru banget masih anget",
+      "email": "bayuf08@gmail.com",
+      "phone": "081259971975",
+      "password": "venturointernal",
+      "confirmPassword": "venturointernal",
+      "balance": 0
+    }
+  ],
+  "dataPackages": [
+    {
+      "id": "pkg1",
+      "name": "Paket Harian 1GB",
+      "price": 5000,
+      "originalPrice": 7000,
+      "data": "1GB",
+      "validity": "1 Hari",
+      "category": "daily",
+      "popular": false,
+      "description": "Paket data harian yang cocok untuk kebutuhan Browse ringan dan media sosial",
+      "features": [
+        "Kecepatan 4G LTE",
+        "Berlaku 24 jam",
+        "Tanpa FUP",
+        "Bonus WhatsApp unlimited"
+      ],
+      "coverage": "Seluruh Indonesia",
+      "networkType": "4G LTE",
+      "speedRange": "10-50 Mbps",
+      "activationTime": "Instant",
+      "usageRestriction": "Tanpa batasan waktu",
+      "bonusApps": [
+        "WhatsApp"
+      ]
+    },
+    {
+      "id": "pkg2",
+      "name": "Paket Harian 3GB",
+      "price": 12000,
+      "originalPrice": 15000,
+      "data": "3GB",
+      "validity": "1 Hari",
+      "category": "daily",
+      "popular": true,
+      "description": "Paket terpopuler untuk streaming video dan gaming online sepanjang hari",
+      "features": [
+        "Kecepatan 4G LTE",
+        "Berlaku 24 jam",
+        "Tanpa FUP",
+        "Bonus streaming",
+        "Priority network"
+      ],
+      "coverage": "Seluruh Indonesia",
+      "networkType": "4G LTE",
+      "speedRange": "20-100 Mbps",
+      "activationTime": "Instant",
+      "usageRestriction": "Tanpa batasan waktu",
+      "bonusApps": [
+        "YouTube",
+        "Netflix",
+        "Disney+",
+        "WhatsApp",
+        "Instagram"
+      ]
+    },
+    {
+      "id": "pkg3",
+      "name": "Paket Mingguan 5GB",
+      "price": 25000,
+      "originalPrice": 30000,
+      "data": "5GB",
+      "validity": "7 Hari",
+      "category": "weekly",
+      "popular": false,
+      "description": "Solusi hemat untuk kebutuhan internet seminggu dengan kuota yang cukup",
+      "features": [
+        "Kecepatan 4G LTE",
+        "Berlaku 7 hari",
+        "FUP 2GB/hari",
+        "Bonus sosial media"
+      ],
+      "coverage": "Seluruh Indonesia",
+      "networkType": "4G LTE",
+      "speedRange": "15-75 Mbps",
+      "activationTime": "Instant",
+      "usageRestriction": "Maksimal 2GB per hari",
+      "bonusApps": [
+        "WhatsApp",
+        "Instagram",
+        "Facebook",
+        "Twitter"
+      ]
+    },
+    {
+      "id": "pkg4",
+      "name": "Paket Mingguan 10GB",
+      "price": 45000,
+      "originalPrice": 55000,
+      "data": "10GB",
+      "validity": "7 Hari",
+      "category": "weekly",
+      "popular": true,
+      "description": "Paket mingguan dengan kuota besar untuk kebutuhan kerja dan hiburan",
+      "features": [
+        "Kecepatan 4G LTE",
+        "Berlaku 7 hari",
+        "FUP 3GB/hari",
+        "Bonus sosmed",
+        "Video streaming HD"
+      ],
+      "coverage": "Seluruh Indonesia",
+      "networkType": "4G LTE",
+      "speedRange": "25-100 Mbps",
+      "activationTime": "Instant",
+      "usageRestriction": "Maksimal 3GB per hari",
+      "bonusApps": [
+        "YouTube",
+        "Instagram",
+        "WhatsApp",
+        "Zoom",
+        "Google Meet"
+      ]
+    },
+    {
+      "id": "pkg5",
+      "name": "Paket Bulanan 25GB",
+      "price": 75000,
+      "originalPrice": 90000,
+      "data": "25GB",
+      "validity": "30 Hari",
+      "category": "monthly",
+      "popular": false,
+      "description": "Paket bulanan ekonomis dengan kuota yang mencukupi untuk penggunaan sehari-hari",
+      "features": [
+        "Kecepatan 4G LTE",
+        "Berlaku 30 hari",
+        "FUP 2GB/hari",
+        "Bonus streaming",
+        "Cloud storage"
+      ],
+      "coverage": "Seluruh Indonesia",
+      "networkType": "4G LTE",
+      "speedRange": "20-80 Mbps",
+      "activationTime": "Instant",
+      "usageRestriction": "Maksimal 2GB per hari",
+      "bonusApps": [
+        "YouTube",
+        "Netflix",
+        "Spotify",
+        "WhatsApp",
+        "Google Drive"
+      ]
+    },
+    {
+      "id": "pkg6",
+      "name": "Paket Unlimited",
+      "price": 85000,
+      "originalPrice": 120000,
+      "data": "Unlimited",
+      "validity": "30 Hari",
+      "category": "monthly",
+      "popular": true,
+      "description": "Paket premium unlimited dengan kecepatan tinggi dan akses ke semua aplikasi",
+      "features": [
+        "Kecepatan 4G LTE",
+        "Berlaku 30 hari",
+        "FUP 50GB",
+        "Bonus semua aplikasi",
+        "Prioritas jaringan",
+        "Customer support 24/7"
+      ],
+      "coverage": "Seluruh Indonesia",
+      "networkType": "4G LTE",
+      "speedRange": "50-100 Mbps",
+      "activationTime": "Instant",
+      "usageRestriction": "Setelah 50GB kecepatan dikurangi",
+      "bonusApps": [
+        "Semua aplikasi",
+        "Gaming",
+        "Streaming",
+        "Video Call",
+        "Cloud Services"
+      ]
+    }
+  ],
+  "activePackages": [
+    {
+      "id": "active1",
+      "userId": "user_1750078597758",
+      "packageId": "pkg6",
+      "status": "active",
+      "transactionId": "trx1",
+      "startDate": "2025-06-15T00:00:00.000Z",
+      "endDate": "2025-07-15T00:00:00.000Z",
+      "usedGB": "37.5GB"
+    },
+    {
+      "id": "578b41ee-00de-4ecd-889e-69561bdd1365",
+      "userId": "user_1750090786944",
+      "packageId": "pkg2",
+      "transactionId": "0de8fca4-5dda-46d9-ad8d-9b55100aa147",
+      "status": "active",
+      "usedGB": "1GB",
+      "startDate": "2025-06-16T16:25:36.136Z",
+      "endDate": "2025-06-17T16:25:36.136Z"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "trx1",
+      "userId": "user_1750078597758",
+      "paymentMethodId": "2",
+      "packageId": "pkg1",
+      "amount": 18000,
+      "status": "success",
+      "date": "2025-06-16T08:30:00.000Z",
+      "phone": "081234567890"
+    },
+    {
+      "id": "trx2",
+      "userId": "user_1750078597758",
+      "paymentMethodId": "2",
+      "packageId": "pkg2",
+      "amount": 50000,
+      "status": "pending",
+      "date": "2025-06-16T09:00:00.000Z",
+      "phone": "081234567890"
+    },
+    {
+      "id": "7244adba-5435-4313-8173-1e3c1958149b",
+      "packageId": "pkg3",
+      "userId": "user_1750078597758",
+      "amount": 25000,
+      "phone": "+1 (509) 357-5419",
+      "paymentMethodId": "gopay",
+      "status": "success",
+      "date": "2025-06-16T15:40:03.361Z"
+    },
+    {
+      "id": "0de8fca4-5dda-46d9-ad8d-9b55100aa147",
+      "packageId": "pkg2",
+      "userId": "user_1750090786944",
+      "amount": 14500,
+      "phone": "081259971975",
+      "paymentMethodId": "bank",
+      "status": "success",
+      "date": "2025-06-16T16:25:34.365Z"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "userId": "1",
+      "packageId": "pkg1",
+      "rating": 5,
+      "comment": "Paket ini sangat memuaskan! Internet cepat dan stabil untuk streaming dan gaming.",
+      "date": "2023-06-14T08:30:00.000Z",
+      "verified": true
+    },
+    {
+      "id": 2,
+      "userId": "2",
+      "packageId": "pkg3",
+      "rating": 5,
+      "comment": "Joss Cihuy",
+      "date": "2023-06-14T08:30:00.000Z",
+      "verified": true
+    },
+    {
+      "id": "787bc726-9096-4160-93cc-e53e01a42ba6",
+      "comment": "checkkadadadadadadadad",
+      "date": "2025-06-16T15:10:06.316Z",
+      "packageId": "pkg3",
+      "rating": 5,
+      "review": "checkkadadadadadadadad",
+      "userId": "user_1750078597758",
+      "verified": false
+    },
+    {
+      "id": "728ebf33-173f-4277-b598-9a908e3a6d5f",
+      "comment": "adadadadadadadadadadad",
+      "date": "2025-06-16T15:11:58.449Z",
+      "packageId": "pkg3",
+      "rating": 5,
+      "review": "adadadadadadadadadadad",
+      "userId": "user_1750078597758",
+      "verified": false
+    },
+    {
+      "id": "55834920-dcca-43c6-bb01-4cba0c4bb354",
+      "comment": "makdausmdaodadoadkaoda",
+      "date": "2025-06-16T15:12:39.990Z",
+      "packageId": "pkg3",
+      "rating": 5,
+      "review": "makdausmdaodadoadkaoda",
+      "userId": "user_1750078597758",
+      "verified": false
+    },
+    {
+      "id": "c69abdf4-ef30-4835-8b17-6c7747846ed3",
+      "comment": "makdausmdaodadoadkaoda",
+      "date": "2025-06-16T15:12:50.938Z",
+      "packageId": "pkg3",
+      "rating": 5,
+      "review": "makdausmdaodadoadkaoda",
+      "userId": "user_1750078597758",
+      "verified": false
+    },
+    {
+      "id": "417e3b12-eb15-4b6f-be24-194b258f4719",
+      "comment": "makdausmdaodadoadkaoda",
+      "date": "2025-06-16T15:17:25.426Z",
+      "packageId": "pkg3",
+      "rating": 5,
+      "review": "makdausmdaodadoadkaoda",
+      "userId": "user_1750078597758",
+      "verified": false
+    },
+    {
+      "id": "df8605d5-c3b3-4c56-9eec-400e7c762fe6",
+      "comment": "BARU COKadadadadadad",
+      "date": "2025-06-16T15:17:35.855Z",
+      "packageId": "pkg3",
+      "rating": 5,
+      "review": "BARU COKadadadadadad",
+      "userId": "user_1750078597758",
+      "verified": false
+    },
+    {
+      "id": "14279b6b-997d-4ca0-91db-dcbcc33d26f7",
+      "comment": "dadadadadadadadadadad",
+      "date": "2025-06-16T15:22:34.194Z",
+      "packageId": "pkg3",
+      "rating": 1,
+      "review": "dadadadadadadadadadad",
+      "userId": "user_1750078597758",
+      "verified": false
+    },
+    {
+      "id": "17af13d2-3fdd-4297-9a2f-0c044d2ca01a",
+      "comment": "adadadadadadadadadadad",
+      "date": "2025-06-16T15:23:33.050Z",
+      "packageId": "pkg3",
+      "rating": 1,
+      "review": "adadadadadadadadadadad",
+      "userId": "user_1750078597758",
+      "verified": false
+    },
+    {
+      "id": "6db4a367-c837-4417-a3eb-ddfe4f1b3710",
+      "comment": "testttttttttttttttttttt",
+      "date": "2025-06-16T16:25:21.382Z",
+      "packageId": "pkg2",
+      "rating": 5,
+      "review": "testttttttttttttttttttt",
+      "userId": "user_1750090786944",
+      "verified": false
+    }
+  ],
+  "paymentMethods": [
+    {
+      "id": "gopay",
+      "name": "GoPay",
+      "icon": "💚",
+      "fee": 0
+    },
+    {
+      "id": "ovo",
+      "name": "OVO",
+      "icon": "💜",
+      "fee": 0
+    },
+    {
+      "id": "dana",
+      "name": "DANA",
+      "icon": "💙",
+      "fee": 0
+    },
+    {
+      "id": "shopeepay",
+      "name": "ShopeePay",
+      "icon": "🧡",
+      "fee": 0
+    },
+    {
+      "id": "bank",
+      "name": "Transfer Bank",
+      "icon": "🏦",
+      "fee": 2500
+    },
+    {
+      "id": "credit",
+      "name": "Kartu Kredit",
+      "icon": "💳",
+      "fee": 3000
+    }
+  ]
+}
