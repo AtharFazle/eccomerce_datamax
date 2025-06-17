@@ -13,19 +13,16 @@ export const getPackages = async () => {
 };
 
 export const getPackageById = async (id: string) => {
-  const response = await api.get(`/dataPackages`);
+  const response = await api.get(`/dataPackages/${id}`);
+  const responseRelatedPackages = await api.get(`/dataPackages`);
+  
+  if (!response.data) return undefined;
 
-  if (!response.data?.length) return undefined;
-
-  const selectedPackage = response.data.find(
-    (pkg: DataPackage) => pkg.id === id
-  );
-
-  if (!selectedPackage) return undefined;
+  const selectedPackage = response.data;
 
   const reviews = await api.get(`/reviews`);
 
-  const relatedPackages = response.data.filter(
+  const relatedPackages = responseRelatedPackages.data.filter(
     (pkg: DataPackage) =>
       pkg.category === selectedPackage.category && pkg.id !== id
   );

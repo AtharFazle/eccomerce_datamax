@@ -245,7 +245,7 @@ export default function TransactionsPage() {
                           <span>•</span>
                           <span>{formatDate(transaction.date)}</span>
                           <span>•</span>
-                          <span>{transaction.paymentMethod.name}</span>
+                          <span>{transaction.paymentMethod?.name}</span>
                         </div>
                       </div>
                     </div>

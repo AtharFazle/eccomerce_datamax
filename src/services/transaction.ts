@@ -1,5 +1,5 @@
 import api from "@/lib/axios";
-import { DataPackage, Transaction } from "@/types";
+import { DataPackage, PaymentMethod, Transaction, User } from "@/types";
 
 export interface CreateTransactionPayload {
   packageId: string;
@@ -67,24 +67,32 @@ export async function createTransaction(payload: CreateTransactionPayload) {
 }
 
 export async function getTransactionsByUserId(userId: string) {
-  const [transactions, users, packages] = await Promise.all([
+  const [transactions, users, packages, paymentMethods] = await Promise.all([
     api.get("/transactions"),
     api.get("/users"),
     api.get("/dataPackages"),
+    api.get("/paymentMethods"),
   ]);
 
   const filteredTransactions = transactions.data.filter(
     (transaction: any) => transaction.userId === userId
   );
 
-  filteredTransactions.forEach((transaction: any) => {
+  filteredTransactions.forEach((transaction: Transaction) => {
     transaction.user = users.data.find(
-      (user: any) => user.id === transaction.userId
+      (user: User) => user.id === transaction.userId
     );
     transaction.package = packages.data.find(
-      (packageData: any) => packageData.id === transaction.packageId
+      (packageData: DataPackage) => packageData.id === transaction.packageId
     );
+
+    transaction.paymentMethod = paymentMethods.data.find(
+      (paymentMethod: PaymentMethod) =>
+        paymentMethod.id === transaction.paymentMethodId
+    );
+
   });
+
 
   return filteredTransactions;
 }
