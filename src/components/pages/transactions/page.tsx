@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import {Link} from "react-router-dom"
-import { ArrowLeft, Zap, Search, Filter, Download, Eye, Calendar, CreditCard } from "lucide-react"
+import { ArrowLeft, Zap, Search, Filter, Download, Eye, Calendar, CreditCard, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -254,9 +254,17 @@ export default function TransactionsPage() {
                         <p className="font-semibold">Rp {transaction.amount.toLocaleString("id-ID")}</p>
                         {getStatusBadge(transaction.status)}
                       </div>
+                      {transaction.status === "pending" ? (
+                        <Link to={`/payment-confirmation?transaction=${transaction.id}`}>
+                          <Button variant="outline" size="icon">
+                            <ChevronRight className="w-4 h-4" />
+                          </Button>
+                        </Link>
+                      ) : transaction.status === "success" && (
                       <Button variant="ghost" size="icon">
                         <Eye className="w-4 h-4" />
                       </Button>
+                      )}
                     </div>
                   </div>
                 ))
