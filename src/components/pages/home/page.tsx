@@ -65,9 +65,9 @@ export default function LandingPage() {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
-            <Button size="lg" variant="outline" className="text-lg px-8">
+            {/* <Button size="lg" variant="outline" className="text-lg px-8">
               Lihat Paket
-            </Button>
+            </Button> */}
           </div>
         </div>
       </section>

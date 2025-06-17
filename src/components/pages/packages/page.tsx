@@ -60,7 +60,7 @@ export default function PackagesPage() {
               </span>
             </div>
           </div>
-          <Link to="/">
+          <Link to="/dashboard">
             <Button variant="outline">Dashboard</Button>
           </Link>
         </div>
