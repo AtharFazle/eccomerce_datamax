@@ -42,6 +42,15 @@
       "password": "Pa$$w0rd!",
       "confirmPassword": "Pa$$w0rd!",
       "balance": 0
+    },
+    {
+      "id": "user_1750663765310",
+      "name": "Plato Berger",
+      "email": "viwinoji@mailinator.com",
+      "phone": "+1 (417) 793-3491",
+      "password": "Pa$$w0rd!",
+      "confirmPassword": "Pa$$w0rd!",
+      "balance": 0
     }
   ],
   "dataPackages": [
@@ -222,96 +231,46 @@
   ],
   "activePackages": [
     {
-      "id": "active1",
-      "userId": "user_1750078597758",
-      "packageId": "pkg6",
-      "status": "active",
-      "transactionId": "trx1",
-      "startDate": "2025-06-15T00:00:00.000Z",
-      "endDate": "2025-07-15T00:00:00.000Z",
-      "usedGB": "37.5GB"
-    },
-    {
-      "id": "578b41ee-00de-4ecd-889e-69561bdd1365",
-      "userId": "user_1750090786944",
+      "id": "9d48feae-12d9-4c85-b7ea-116a944251c5",
+      "userId": "1",
       "packageId": "pkg2",
-      "transactionId": "0de8fca4-5dda-46d9-ad8d-9b55100aa147",
-      "status": "active",
-      "usedGB": "1GB",
-      "startDate": "2025-06-16T16:25:36.136Z",
-      "endDate": "2025-06-17T16:25:36.136Z"
-    },
-    {
-      "id": "f739559c-7817-40ec-a6a1-9b8373ef0134",
-      "userId": "2",
-      "packageId": "pkg2",
-      "transactionId": "36ccea0b-923a-49aa-be56-1a8eb23590af",
+      "transactionId": "c5d1ba93-0997-4eb5-9fdf-ec2f13b4ea13",
       "status": "active",
       "usedGB": "0GB",
-      "startDate": "2025-06-17T03:17:22.748Z",
-      "endDate": "2025-06-18T03:17:22.748Z"
+      "startDate": "2025-06-23T07:24:38.238Z",
+      "endDate": "2025-06-24T07:24:38.238Z"
+    },
+    {
+      "id": "da54c4a0-6dbc-4789-9261-72ffceed9448",
+      "userId": "1",
+      "packageId": "pkg4",
+      "transactionId": "3f11a4cc-9e18-4706-8041-e30d8b54149c",
+      "status": "active",
+      "usedGB": "0GB",
+      "startDate": "2025-06-23T07:24:50.418Z",
+      "endDate": "2025-06-30T07:24:50.418Z"
     }
   ],
   "transactions": [
     {
-      "id": "trx1",
-      "userId": "user_1750078597758",
-      "paymentMethodId": "2",
-      "packageId": "pkg1",
-      "amount": 18000,
-      "status": "success",
-      "date": "2025-06-16T08:30:00.000Z",
-      "phone": "081234567890"
-    },
-    {
-      "id": "trx2",
-      "userId": "user_1750078597758",
-      "paymentMethodId": "2",
+      "id": "c5d1ba93-0997-4eb5-9fdf-ec2f13b4ea13",
       "packageId": "pkg2",
-      "amount": 50000,
-      "status": "pending",
-      "date": "2025-06-16T09:00:00.000Z",
-      "phone": "081234567890"
-    },
-    {
-      "id": "7244adba-5435-4313-8173-1e3c1958149b",
-      "packageId": "pkg3",
-      "userId": "user_1750078597758",
-      "amount": 25000,
-      "phone": "+1 (509) 357-5419",
-      "paymentMethodId": "gopay",
-      "status": "success",
-      "date": "2025-06-16T15:40:03.361Z"
-    },
-    {
-      "id": "0de8fca4-5dda-46d9-ad8d-9b55100aa147",
-      "packageId": "pkg2",
-      "userId": "user_1750090786944",
-      "amount": 14500,
-      "phone": "081259971975",
-      "paymentMethodId": "bank",
-      "status": "success",
-      "date": "2025-06-16T16:25:34.365Z"
-    },
-    {
-      "id": "36ccea0b-923a-49aa-be56-1a8eb23590af",
-      "packageId": "pkg2",
-      "userId": "2",
-      "amount": 14500,
-      "phone": "081259971975",
-      "paymentMethodId": "bank",
-      "status": "success",
-      "date": "2025-06-17T03:15:00.614Z"
-    },
-    {
-      "id": "8420938c-ae8d-4b12-aeaa-43866863933b",
-      "packageId": "pkg1",
-      "userId": "2",
-      "amount": 5000,
+      "userId": "1",
+      "amount": 12000,
       "phone": "081259971975",
       "paymentMethodId": "gopay",
-      "status": "pending",
-      "date": "2025-06-17T03:20:28.213Z"
+      "status": "success",
+      "date": "2025-06-23T07:24:36.330Z"
+    },
+    {
+      "id": "3f11a4cc-9e18-4706-8041-e30d8b54149c",
+      "packageId": "pkg4",
+      "userId": "1",
+      "amount": 45000,
+      "phone": "081259971975",
+      "paymentMethodId": "gopay",
+      "status": "success",
+      "date": "2025-06-23T07:24:48.821Z"
     }
   ],
   "reviews": [

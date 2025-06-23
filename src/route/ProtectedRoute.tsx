@@ -11,9 +11,11 @@ const ProtectedRoute = (props: Props) => {
 
     const isAuthenticated = () => {
 
-        const token = localStorage.getItem('token')
+        const token = localStorage.getItem('user')
         return !!token
     }
+
+    // alert(isAuthenticated())
 
     if(!isAuthenticated()) {
         return <Navigate to="/login" replace />

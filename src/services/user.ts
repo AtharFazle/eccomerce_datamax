@@ -1,5 +1,5 @@
 import api from "@/lib/axios";
-import { LoginData, RegisterData, User } from "@/types";
+import { ActivePackage, DataPackage, LoginData, RegisterData, User } from "@/types";
 import { toast } from "react-toastify";
 
 export const getUser = (): User | null => {
@@ -42,7 +42,7 @@ export const createUser = async (user: RegisterData) => {
 
 export const getUserActivePackages = async (userId: string) => {
   const activePackages = await api.get("/activePackages");
-
+  
   const [users, packages] = await Promise.all([
     api.get("/users"),
     api.get("/dataPackages"),
@@ -51,26 +51,39 @@ export const getUserActivePackages = async (userId: string) => {
   const parseGB = (val: string) =>
     parseFloat(val.toUpperCase().replace("GB", "").trim());
 
-  const userActive = activePackages.data.find(
-    (activePackage: any) => activePackage.userId === userId
+  const userActivePackages = activePackages.data.filter(
+    (activePackage: ActivePackage) => 
+      activePackage.userId === userId && activePackage.status === "active"
   );
 
-  if (!userActive) return null;
 
-  const user = users.data.find((u: any) => u.id === userActive.userId);
-  const dataPackage = packages.data.find((p: any) => p.id === userActive.packageId);
+  if (!userActivePackages || userActivePackages.length === 0) return null;
+
+  const latestActivePackage = userActivePackages.reduce((latest: ActivePackage, current: ActivePackage) => {
+    const latestDate = new Date(latest.startDate);
+    const currentDate = new Date(current.startDate);
+    return currentDate > latestDate ? current : latest;
+  });
+
+  const user = users.data.find((u: User) => u.id === latestActivePackage.userId);
+  const dataPackage = packages.data.find((p: DataPackage) => p.id === latestActivePackage.packageId);
 
   const totalGB = parseGB(dataPackage?.data || "0GB");
-  const usedGB = parseGB(userActive?.usedGB || "0GB");
+  const usedGB = parseGB(latestActivePackage?.usedGB || "0GB");
 
   const percentageUsedRaw = totalGB > 0 ? (usedGB / totalGB) * 100 : 0;
 
+  console.log(latestActivePackage, 'latestActivePackage');
+  console.log(dataPackage, 'dataPackage');
+
   return {
-    ...userActive,
+    ...latestActivePackage,
     user,
     package: dataPackage,
     percentageUsed: percentageUsedRaw.toFixed(2) + "%",
     percentageUsedRaw,
+    totalActivePackages: userActivePackages.length,
+    // allActivePackages: userActivePackages, // Jika diperlukan untuk debugging atau keperluan lain
   };
 };
 

@@ -1,6 +1,6 @@
 import type React from "react";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Eye, EyeOff, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -18,46 +18,58 @@ import { login } from "@/services/user";
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
   const [form, setForm] = useState({ email: "", password: "" });
+  
   const navigate = useNavigate();
-
   const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-  const emailParam = queryParams.get("email");
 
-  useEffect(() => {
-    if (emailParam) {
-      setForm((prevForm) => ({ ...prevForm, email: emailParam }));
-    }
-  }, [emailParam]);
-
-  const handleChangeForm = ({ value, key }: { value: string; key: string }) => {
-    setForm({
-      ...form,
+  // Memoize handleChangeForm untuk menghindari re-render tidak perlu
+  const handleChangeForm = useCallback(({ value, key }: { value: string; key: string }) => {
+    setForm(prevForm => ({
+      ...prevForm,
       [key]: value,
-    });
-  };
+    }));
+  }, []);
 
   useEffect(() => {
     const user = localStorage.getItem("user");
     if (user) {
-      navigate("/dashboard");
+      navigate("/dashboard", { replace: true });
     }
-  }, []);
+  }, [navigate]);
 
- const handleLogin = async (e: React.FormEvent) => {
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const emailParam = queryParams.get("email");
+    
+    if (emailParam) {
+      setForm(prevForm => ({ 
+        ...prevForm, 
+        email: emailParam 
+      }));
+    }
+  }, [location.search]);
+
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
 
-    const success = await login(form, navigate);
-
-    setIsLoading(false);
-
-    if (!success) {
-      console.log("Login gagal");
+    try {
+      const success = await login(form, navigate);
+      
+      if (!success) {
+        console.log("Login gagal");
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+    } finally {
+      setIsLoading(false);
     }
   };
+
+  const togglePasswordVisibility = useCallback(() => {
+    setShowPassword(prev => !prev);
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex items-center justify-center p-4">
@@ -65,9 +77,7 @@ export default function LoginPage() {
         {/* Logo */}
         <div className="text-center mb-8">
           <Link
-            to={{
-              pathname: "/",
-            }}
+            to="/"
             className="inline-flex items-center space-x-2"
           >
             <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
@@ -121,7 +131,7 @@ export default function LoginPage() {
                   />
                   <button
                     type="button"
-                    onClick={() => setShowPassword(!showPassword)}
+                    onClick={togglePasswordVisibility}
                     className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
                   >
                     {showPassword ? (
@@ -137,9 +147,6 @@ export default function LoginPage() {
                   <input type="checkbox" className="rounded border-gray-300" />
                   <span className="text-gray-600">Ingat saya</span>
                 </label>
-                {/* <Link href="#" className="text-blue-600 hover:text-blue-700 font-medium">
-                      Lupa password?
-                    </Link> */}
               </div>
               <Button
                 type="submit"
